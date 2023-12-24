@@ -5,6 +5,7 @@
         <div class="row px-xl-5">
             <!-- Shop Sidebar Start -->
             <div class="col-lg-3 col-md-4">
+
                 <!-- Price Start -->
                 <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by
                         Category</span></h5>
@@ -45,8 +46,14 @@
                     <div class="col-12 pb-1">
                         <div class="d-flex align-items-center justify-content-between mb-4">
                             <div>
-                                <button class="btn btn-sm btn-light"><i class="fa fa-th-large"></i></button>
-                                <button class="btn btn-sm btn-light ml-2"><i class="fa fa-bars"></i></button>
+                                <a href="{{route('user#cart',)}}" class="btn px-0 ml-3">
+                                <button type="button" class="btn btn-primary position-relative">
+                                    <i class="fas fa-shopping-cart "></i>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        {{count($cart)}}
+                                    </span>
+                                  </button>
+                                </a>
                             </div>
                             <div class="ml-2">
                                 <div class="btn-group">
@@ -96,8 +103,7 @@
                                   <img class="img-fluid w-100" style="height: 210px"
                                       src="{{ asset('storage/' . $p->image) }}" alt="">
                                   <div class="product-action">
-                                      <a class="btn btn-outline-dark btn-square" href=""><i
-                                              class="fa fa-shopping-cart"></i></a>
+
                                       <a class="btn btn-outline-dark btn-square" href="{{route('product#detail',$p->id)}}"><i
                                               class="fa-solid fa-info"></i></a>
 
@@ -186,8 +192,8 @@
                             data: {
                                 'status': 'desc'
                             },
-                            dataType: 'json',
-                            success: function(response) {
+                            dataType : 'json',
+                            success : function(response) {
                                 $list = '';
                                 for ($i=0;$i<response.length;$i++) {
                                     $list += `
