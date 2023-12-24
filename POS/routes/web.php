@@ -86,6 +86,7 @@ Route::get('dashboard',[AuthController::class,'dashboard'])->name('admin#dashboa
         //home
         Route::group(['prefix'=> 'user','middleware'=>'User_auth'],function(){
         Route::get('home',[UserController::class,'home'])->name('user#home');
+        Route::get('filter/{id}',[UserController::class,'filter'])->name('user#filter');
         // profile
         Route::get('edit',[UserController::class,'edit'])->name('user#edit');
         Route::get('detail',[UserController::class,'detail'])->name('user#detail');
