@@ -98,7 +98,7 @@
                                   <div class="product-action">
                                       <a class="btn btn-outline-dark btn-square" href=""><i
                                               class="fa fa-shopping-cart"></i></a>
-                                      <a class="btn btn-outline-dark btn-square" href=""><i
+                                      <a class="btn btn-outline-dark btn-square" href="{{route('product#detail',$p->id)}}"><i
                                               class="fa-solid fa-info"></i></a>
 
                                   </div>

@@ -86,6 +86,13 @@ class UserController extends Controller
 
     }
 
+    //Product Detil Page
+    public function productDetail($pizzaId){
+        $product = Product::where('id',$pizzaId)->first();
+        $pizzaList = Product::get();
+        return view('user.main.productDetail',compact('product','pizzaList'));
+    }
+
 
 
 

@@ -98,6 +98,7 @@ Route::get('dashboard',[AuthController::class,'dashboard'])->name('admin#dashboa
         Route::prefix('ajax')->group(function(){
             Route::get('pizza/list',[AjaxController::class,'pizzaList'])->name('ajax#pizzaList');
             });
+        Route::get('product/detail/{id}',[UserController::class,'productDetail'])->name('product#detail');
 
         });
 
